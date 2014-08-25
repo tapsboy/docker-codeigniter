@@ -9,11 +9,11 @@ RUN apt-get update && \
 
 # Download CodeIgniter into /app
 RUN rm -fr /app && mkdir /app && \
- curl -O https://ellislab.com/codeigniter/download && \
- unzip CodeIgniter_2.2.0.zip -d /app  && \
- rm CodeIgniter_2.2.0.zip
+ curl -OL https://ellislab.com/codeigniter/download && \
+ unzip download -d /app  && \
+ rm download
 
-# Add configuration with info for Joomla to connect to DB
+# Add configuration with info for Codeingiter to connect to DB
 ADD database.php /app/application/config/database.php
 RUN chmod 644 /app/application/config/database.php
 
