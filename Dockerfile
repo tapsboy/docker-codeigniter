@@ -14,8 +14,8 @@ RUN rm -fr /app && mkdir /app && \
  rm CodeIgniter_2.2.0.zip
 
 # Add configuration with info for Joomla to connect to DB
-ADD database.php /app/CodeIgniter_2.2.0/application/config/database.php
-RUN chmod 644 /app/CodeIgniter_2.2.0/application/config/database.php
+ADD database.php /app/application/config/database.php
+RUN chmod 644 /app/application/config/database.php
 
 # Fix permissions for apache
 RUN chown -R www-data:www-data /app
