@@ -10,7 +10,8 @@ RUN apt-get update && \
 # Download CodeIgniter into /app
 RUN rm -fr /app && mkdir /app && \
  curl -OL https://ellislab.com/codeigniter/download && \
- unzip download -d /app  && \
+ unzip download -d /tmp  && \
+ cp -Rf /tmp/CodeIgniter_2.2.0/* /app
  rm download
 
 # Add configuration with info for Codeingiter to connect to DB
